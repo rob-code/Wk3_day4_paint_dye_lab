@@ -23,6 +23,18 @@ sql = "SELECT dyes.* FROM dyes
 return Dye.get_many(sql)
 end
 
+def formula
+  sql = "SELECT dyes.name, paints_dyes.percentage FROM dyes
+         INNER JOIN paints_dyes ON paints_dyes.dye_id = dyes.id
+         WHERE paint_id = #{@id}"
+  returned = SqlRunner.run(sql) #Dye.get_many(sql)
+  puts "#{@name} is made of"
+  for item in returned
+    puts "#{item['percentage']}\% of #{item['name']}"
+  end
+
+end
+
 def self.all()
   sql = "SELECT * FROM paints"
   return self.get_many(sql)

@@ -18,6 +18,9 @@ def save()
   @id = paint_dye['id'].to_i
 end
 
+
+
+
 def self.all()
   sql = "SELECT * FROM paints_dyes"
   return self.get_many(sql)
