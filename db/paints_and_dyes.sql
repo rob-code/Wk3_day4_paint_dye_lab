@@ -18,7 +18,7 @@ CREATE TABLE paints_dyes(
 id SERIAL4 primary key,
 paint_id INT4 REFERENCES paints(id) ON DELETE CASCADE,
 dye_id INT4 REFERENCES dyes(id) ON DELETE CASCADE,
-percentage INT2
+percentage INT2 
 );
 
 
