@@ -18,9 +18,9 @@ end
 
 def paints()
 sql = "SELECT paints.* FROM paints
-       INNER JOIN paints_dyes ON paints_dyes.paints_id = paints.id
+       INNER JOIN paints_dyes ON paints_dyes.paint_id = paints.id
        WHERE dye_id = #{@id}"
-return Paints.get_many(sql)
+return Paint.get_many(sql)
 end
 
 
